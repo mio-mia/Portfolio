@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이콘 흡수 이펙트</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #111;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .icon {
+            width: 80px;
+            height: 80px;
+            background-color: #3498db;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+        }
+
+        .page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: white;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+        .page.show {
+            opacity: 1;
+        }
+
+        .page i {
+            display: block;
+            margin: 30px 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="icon" id="icon">🚀</div>
+    <div class="page" id="page"><i id="page-icon">아이콘</i></div>
+
+    <script>
+        document.getElementById("icon").addEventListener("click", function(event) {
+            const icon = event.currentTarget;
+            const page = document.getElementById("page");
+
+            const rect = icon.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            // 각 꼭짓점의 위치 계산
+            const a = { x: rect.left, y: rect.top };
+            const b = { x: rect.right, y: rect.top };
+            const c = { x: rect.right, y: rect.bottom };
+            const d = { x: rect.left, y: rect.bottom };
+
+            // 페이지를 각 꼭짓점 위치로 이동 후 축소
+            setTimeout(() => {
+              if(page.classList.contains("show")){
+                page.classList.add("show");
+                page.style.transformOrigin = "center center"; // 확대 시 중심으로 설정
+                page.style.transform = "scale(1)"; // 페이지 확대
+                page.style.opacity = "1"; // 페이지 불투명도 설정
+              } else if (!page.classList.contains("show")) {
+                  page.classList.remove("show");
+                  page.style.transformOrigin = `${a.x}px ${a.y}px`;
+                  page.style.transform = "scale(0)";
+                  page.style.opacity = "0";
+                }
+            }, 600);
+
+            setTimeout(() => {
+              if(page.classList.contains("show")){
+                page.classList.add("show");
+                page.style.transformOrigin = "center center"; // 확대 시 중심으로 설정
+                page.style.transform = "scale(1)"; // 페이지 확대
+                page.style.opacity = "1"; // 페이지 불투명도 설정
+              } else if (!page.classList.contains("show")) {
+                  page.classList.remove("show");
+                  page.style.transformOrigin = `${b.x}px ${b.y}px`;
+                  page.style.transform = "scale(0)";
+                  page.style.opacity = "0";
+                }
+            }, 600);
+
+            setTimeout(() => {
+              if(page.classList.contains("show")){
+                page.classList.add("show");
+                page.style.transformOrigin = "center center"; // 확대 시 중심으로 설정
+                page.style.transform = "scale(1)"; // 페이지 확대
+                page.style.opacity = "1"; // 페이지 불투명도 설정
+              } else if (!page.classList.contains("show")) {
+                  page.classList.remove("show");
+                  page.style.transformOrigin = `${d.x}px ${d.y}px`;
+                  page.style.transform = "scale(0)";
+                  page.style.opacity = "0";
+                }
+            }, 600);
+
+            setTimeout(() => {
+              if(page.classList.contains("show")){
+                page.classList.add("show");
+                page.style.transformOrigin = "center center"; // 확대 시 중심으로 설정
+                page.style.transform = "scale(1)"; // 페이지 확대
+                page.style.opacity = "1"; // 페이지 불투명도 설정
+              } else if (!page.classList.contains("show")) {
+                  page.classList.remove("show");
+                  page.style.transformOrigin = `${d.x}px ${d.y}px`;
+                  page.style.transform = "scale(0)";
+                  page.style.opacity = "0";
+                }
+            }, 600);
+        }); // end of icon
+
+        document.getElementById("page-icon").addEventListener("click", function(event) {
+            const page = document.getElementById("page");
+
+            // 클릭한 위치를 기준으로 transformOrigin 설정
+            const rect = event.target.getBoundingClientRect();
+            const clickX = event.clientX - rect.left;
+            const clickY = event.clientY - rect.top;
+
+            // 페이지를 아이콘 위치로 이동 후 축소
+            page.style.transformOrigin = "center center";
+            page.style.transform = "scale(0.1)";
+            page.style.opacity = "0";
+        }); // end of page-icon
+    </script>
+
+</body>
+</html>
