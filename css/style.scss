@@ -1,4 +1,37 @@
-section{
+*{box-sizing: border-box; font-family: "DM Serif Text";}
+section{width: 100%; height: fit-content;}
+
+/* 스위치 코드 */
+.hidden{display: none; visibility: hidden; opacity: 0;}
+
+/* 고정값 */
+
+
+header{
+  .dock {
+    position: absolute; left: 10px; top: 50%;
+    width: 50px; padding: 10px 5px;
+    background-color: rgb(36 36 36);
+    border: 1px solid #565656; border-radius: 14px;
+    box-shadow: 0px 0px 0px 1px 3f3f3f;
+    transform: translateY(-50%);}
+  .item {position: relative;}
+  .item img {width: 100%;}
+  .item p {display: none;
+    position: absolute; top: 50%; left: 100%;
+    margin: 0 0 0 5px; padding: 3px 10px;
+    color: #ddd;
+    background: #333; box-shadow: 0px 0px 0px 1px 3f3f3f; 
+    border-radius: 6px; border: 1px solid #565656;
+    white-space: nowrap; transform: translateY(-50%);}
+  .item:hover p {display: block;}
+} // header
+
+
+
+
+/*
+#work{
   position: relative;
   display: flex;  align-items: center; justify-content: center;
   flex-direction: column;
@@ -79,3 +112,4 @@ section{
     position: absolute; top: 10px; right: 142px;
     width: 3%; height: 3%; background: #ffba00;}
 }
+    */
