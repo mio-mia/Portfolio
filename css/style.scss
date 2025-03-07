@@ -1,4 +1,5 @@
 *{box-sizing: border-box; font-family: "DM Serif Text";}
+body{background-color: #F2F2F2;}
 section{width: 100%; height: fit-content;}
 
 /* 스위치 코드 */
@@ -8,22 +9,80 @@ section{width: 100%; height: fit-content;}
 
 
 header{
-  .dock {
-    position: absolute; left: 10px; top: 50%;
-    width: 50px; padding: 10px 5px;
-    background-color: rgb(232, 232, 232);
-    border: 1px solid #a6a6a6; border-radius: 14px;
-    box-shadow: 0px 0px 0px 1px 3f3f3f;
-    transform: translateY(-50%);}
-  .item {position: relative; margin-bottom: 5px;}
-  .item.works{margin-bottom: 10px;}
-  .item img {width: 100%;}
-  .item p {display: none;
-    position: absolute; top: 50%; left: 100%;
-    margin: 0 0 0 5px; padding: 3px 10px;
-    color: #ddd;
-    background: #333; box-shadow: 0px 0px 1px 3f3f3f; 
-    border-radius: 6px; border: 1px solid #565656;
-    white-space: nowrap; transform: translateY(-50%);}
-  .item:hover p {display: block;}
+  position: fixed; bottom: 0; left: 0;
+  width: 100%; height: fit-content;
+  margin: 0 auto;
+  .dock{
+    position: absolute; bottom: 20px; left: 50%;
+    display: flex; justify-content: center;
+    width: auto; height: 76px;
+    border-radius: 16px;
+    transform: translateX(-50%);
+    .dock-container{
+      width: auto; height: 100%; padding: 3px;
+      display: flex; justify-content: center; align-items: center;
+      background: rgba(83, 83, 83, 0.25);
+      backdrop-filter: blur(13px);
+      -webkit-backdrop-filter: blur(13px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 16px;}
+    li{width: 70px; height: 70px;
+      display: flex; justify-content: center; align-items: center;
+      vertical-align: bottom;
+      transition: 0.2s;
+      transform-origin: 50% 100%;}
+    li:hover{margin: 0px 13px 0px 13px;}
+    .name{position: absolute; top: -56px;
+      display: flex; justify-content: center; align-items: center;
+      height: 10px; padding: 10px 15px;
+      background: rgba(0, 0, 0, 0.5); border-radius: 5px;
+      color: rgba(255, 255, 255, 0.9);
+      visibility: hidden;}
+    .name::after {content: "";
+      position: absolute; bottom: -9.6px;
+      width: 0; height: 0;
+      backdrop-filter: blur(13px);
+      -webkit-backdrop-filter: blur(13px);
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid rgba(0, 0, 0, 0.5);
+    }
+    .ico {width: 90%; height: auto;
+      object-fit: cover;
+      transition: 0.2s;
+      display: inline-block;
+      transition: transform 0.3s ease;}
+
+    @for $i from 1 through 15 {
+      .li-#{$i}:hover {
+        .name {visibility: visible !important;}
+      }
+    } // @for (:hover 했을 때, 이름표 뜨게 하는)
+  } // .dock
 } // header
+
+#hello{
+  .inner{
+    width: 100%; height: 100vh;
+    display: flex; justify-content: center; align-items: center;
+    flex-direction: column;}
+
+  @keyframes typing {
+    from {width: 0}
+    to {width: 610px}
+  }
+  @keyframes blink {
+    50% {border-color: transparent}
+  }
+
+  .h1-wrap {display: grid; place-items: center;}
+  .typing-effect {
+    width: 610px; text-align: center;
+    animation: typing 2s steps(6), blink .5s step-end infinite alternate;
+    white-space: nowrap; overflow: hidden; letter-spacing: 8.5px;
+    border-right: 3px solid;
+    font-size: 10rem;}
+  p{display: block;
+    width: 100%; margin-top: 20px;
+    text-align: center; font-size: 1.5rem;}
+} // #hello

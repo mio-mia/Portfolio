@@ -18,32 +18,38 @@
 </head>
 <body>
   <header>
-    <nav class="dock">
-      <div class="item hello">
-        <a href="#">
-          <img src="img/hello-black.png">
-          <p>Hello!</p>
-        </a>
+    <div class="dock">
+      <div class="dock-container">
+        <li class="li-1">
+          <div class="name">Hello!</div>
+          <img class="ico" src="img/hello-black.png" alt="">
+        </li>
+        <li class="li-2">
+          <div class="name">About me</div>
+          <img class="ico" src="img/about-white.png" alt="">
+        </li>
+        <li class="li-3">
+          <div class="name">Works</div>
+          <img class="ico" src="img/Folder.png" alt="">
+        </li>
       </div>
-      <div class="item about">
-        <a href="#">
-          <img src="img/about-white.png">
-          <p>About me</p>
-        </a>
-      </div>
-      <div class="item works">
-        <a href="#">
-          <img src="img/Folder.png">
-          <p>Works</p>
-        </a>
-      </div>
-    </nav>
+    </div>
   </header>
   <!-- header ens / main start -->
   <main>
-    <section>
+    <section id="hello">
       <div class="inner">
-        <div></div>
+        <div class="h1-wrap">
+          <h1 class="typing-effect">HELLO!</h1>
+        </div>
+        <p>Welcome to My Portfolio</p>
+      </div>
+    </section>
+    <section id="about">
+      <div class="inner">
+        <div class="about-wrap">
+
+        </div>
       </div>
     </section>
     <!--
@@ -69,5 +75,6 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/index.js"></script>
   <script src="js/media.js"></script>
+  
 </body>
 </html>

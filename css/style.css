@@ -4,6 +4,10 @@
   font-family: "DM Serif Text";
 }
 
+body {
+  background-color: #F2F2F2;
+}
+
 section {
   width: 100%;
   height: fit-content;
@@ -17,43 +21,169 @@ section {
 }
 
 /* 고정값 */
+header {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: fit-content;
+  margin: 0 auto;
+}
 header .dock {
   position: absolute;
-  left: 10px;
-  top: 50%;
-  width: 50px;
-  padding: 10px 5px;
-  background-color: rgb(232, 232, 232);
-  border: 1px solid #a6a6a6;
-  border-radius: 14px;
-  box-shadow: 0px 0px 0px 1px 3f3f3f;
-  transform: translateY(-50%);
+  bottom: 20px;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  width: auto;
+  height: 76px;
+  border-radius: 16px;
+  transform: translateX(-50%);
 }
-header .item {
-  position: relative;
-  margin-bottom: 5px;
+header .dock .dock-container {
+  width: auto;
+  height: 100%;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(83, 83, 83, 0.25);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
 }
-header .item.works {
-  margin-bottom: 10px;
+header .dock li {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: bottom;
+  transition: 0.2s;
+  transform-origin: 50% 100%;
 }
-header .item img {
-  width: 100%;
+header .dock li:hover {
+  margin: 0px 13px 0px 13px;
 }
-header .item p {
-  display: none;
+header .dock .name {
   position: absolute;
-  top: 50%;
-  left: 100%;
-  margin: 0 0 0 5px;
-  padding: 3px 10px;
-  color: #ddd;
-  background: #333;
-  box-shadow: 0px 0px 1px 3f3f3f;
-  border-radius: 6px;
-  border: 1px solid #565656;
-  white-space: nowrap;
-  transform: translateY(-50%);
+  top: -56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+  padding: 10px 15px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.9);
+  visibility: hidden;
 }
-header .item:hover p {
+header .dock .name::after {
+  content: "";
+  position: absolute;
+  bottom: -9.6px;
+  width: 0;
+  height: 0;
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid rgba(0, 0, 0, 0.5);
+}
+header .dock .ico {
+  width: 90%;
+  height: auto;
+  object-fit: cover;
+  transition: 0.2s;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+header .dock .li-1:hover .name {
+  visibility: visible !important;
+}
+header .dock .li-2:hover .name {
+  visibility: visible !important;
+}
+header .dock .li-3:hover .name {
+  visibility: visible !important;
+}
+header .dock .li-4:hover .name {
+  visibility: visible !important;
+}
+header .dock .li-5:hover .name {
+  visibility: visible !important;
+}
+header .dock .li-6:hover .name {
+  visibility: visible !important;
+}
+header .dock .li-7:hover .name {
+  visibility: visible !important;
+}
+header .dock .li-8:hover .name {
+  visibility: visible !important;
+}
+header .dock .li-9:hover .name {
+  visibility: visible !important;
+}
+header .dock .li-10:hover .name {
+  visibility: visible !important;
+}
+header .dock .li-11:hover .name {
+  visibility: visible !important;
+}
+header .dock .li-12:hover .name {
+  visibility: visible !important;
+}
+header .dock .li-13:hover .name {
+  visibility: visible !important;
+}
+header .dock .li-14:hover .name {
+  visibility: visible !important;
+}
+header .dock .li-15:hover .name {
+  visibility: visible !important;
+}
+
+#hello .inner {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 610px;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+#hello .h1-wrap {
+  display: grid;
+  place-items: center;
+}
+#hello .typing-effect {
+  width: 610px;
+  text-align: center;
+  animation: typing 2s steps(6), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  letter-spacing: 8.5px;
+  border-right: 3px solid;
+  font-size: 10rem;
+}
+#hello p {
   display: block;
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.5rem;
 }
