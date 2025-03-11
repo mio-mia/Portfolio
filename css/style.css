@@ -25,6 +25,7 @@ header {
   position: fixed;
   bottom: 0;
   left: 0;
+  z-index: 999;
   width: 100%;
   height: fit-content;
   margin: 0 auto;
@@ -74,7 +75,7 @@ header .dock .name {
   align-items: center;
   height: 10px;
   padding: 10px 15px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
   color: rgba(255, 255, 255, 0.9);
   visibility: hidden;
@@ -89,7 +90,7 @@ header .dock .name::after {
   -webkit-backdrop-filter: blur(13px);
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 10px solid rgba(0, 0, 0, 0.5);
+  border-top: 10px solid rgba(255, 255, 255, 0.5);
 }
 header .dock .ico {
   width: 90%;
@@ -145,45 +146,49 @@ header .dock .li-15:hover .name {
   visibility: visible !important;
 }
 
-#hello .inner {
+/* main */
+#slider-area {
   width: 100%;
   height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+#slider-area .wrap {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+#slider-area .wrap .slide {
+  width: 100%;
+  height: 100vh;
+  flex-shrink: 0;
+}
+
+#hello {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 610px;
-  }
+#hello .inner {
+  width: 80%;
+  height: 100%;
+  color: #fff;
 }
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-#hello .h1-wrap {
-  display: grid;
-  place-items: center;
-}
-#hello .typing-effect {
-  width: 610px;
-  text-align: center;
-  animation: typing 2s steps(6), blink 0.5s step-end infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  letter-spacing: 8.5px;
-  border-right: 3px solid;
-  font-size: 10rem;
-}
-#hello p {
-  display: block;
+#hello h1 {
   width: 100%;
-  margin-top: 20px;
-  text-align: center;
-  font-size: 1.5rem;
+  line-height: 1.2em;
+  font-size: 6rem;
+  letter-spacing: 3px;
+}
+#hello h1 span {
+  font-size: 4rem !important;
+}
+
+#about .inner {
+  width: 100%;
+  height: 100vh !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
 }

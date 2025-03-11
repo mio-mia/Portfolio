@@ -1,3 +1,4 @@
+/* header Dock */
 const icons = document.querySelectorAll(".ico");
 
 const resetIcons = () => {
@@ -30,3 +31,27 @@ const focus = (index) => {
     }
   });
 };
+
+
+/* main area swiper */
+const main_swiper = new Swiper("#slider-area",{
+	wrapperClass:"wrap",
+	slideClass:"slider",
+  slideActiveClass:"active",
+	direction:"vertical",
+  speed: 1200,
+  mousewheel:{
+    enabled:true,
+    releaseOnEdges: true,
+  },
+  effect: "creative",
+  creativeEffect: {
+   prev: {
+     shadow: true,
+     translate: [0, "0%", -400],
+   },
+   next: {
+     translate: [0, "100%", 100],
+   },
+  },
+});

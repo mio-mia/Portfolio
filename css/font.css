@@ -1,0 +1,59 @@
+
+/* Acumin Pro */
+@font-face {
+  font-family: 'Acumin Pro Bold';
+  src: url(../font/Acumin-Pro/Acumin-BdPro.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Acumin Pro Regular';
+  src: url(../font/Acumin-Pro/Acumin-RPro.woff) format('woff');
+}
+
+
+
+/* Helvetica-Neue */
+@font-face {
+  font-family: 'HelveticaNeueBlack';
+  src: url(../font/Helvetica-Neue/HelveticaNeueBlack.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'HelveticaNeueBold';
+  src: url(../font/Helvetica-Neue/HelveticaNeueBold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'HelveticaNeueHeavy';
+  src: url(../font/Helvetica-Neue/HelveticaNeueHeavy.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'HelveticaNeueItalic';
+  src: url(../font/Helvetica-Neue/HelveticaNeueItalic.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'HelveticaNeueLight';
+  src: url(../font/Helvetica-Neue/HelveticaNeueLight.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'HelveticaNeueMedium';
+  src: url(../font/Helvetica-Neue/HelveticaNeueMedium.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'HelveticaNeueRoman';
+  src: url(../font/Helvetica-Neue/HelveticaNeueRoman.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'HelveticaNeueThin';
+  src: url(../font/Helvetica-Neue/HelveticaNeueThin.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'HelveticaNeueUltraLight';
+  src: url(../font/Helvetica-Neue/HelveticaNeueUltraLight.woff) format('woff');
+}
