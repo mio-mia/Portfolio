@@ -1,3 +1,12 @@
+
+/* header 스크롤 */
+const head = new EzenScrollClass("header");
+const head_scroll = new EzenScrollClass("#main-view-b",{
+  class : 'scrolled',
+  baseline : 'top',
+  add: 1,
+});
+
 /* header Dock */
 const icons = document.querySelectorAll(".ico");
 

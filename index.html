@@ -40,9 +40,16 @@
     <div id="slider-area">
       <div class="wrap">
         <section id="hello" class="slider" onmousewheel="return false;">
-          <div class="inner">
-            <h1>UI <span>&amp;</span> UX<br>Design Portfolio</h1>
+          <div class="front"><img src="img/Front.png" alt=""></div>
+          <div class="text">
+            <p>Welcome to My</p>
+            <h1>Portfolio</h1>
           </div>
+          <div class="back"><img src="img/Back.png" alt=""></div>
+          <div class="mouse">
+            <p>스크롤 다운</p>
+            <i></i>
+          </div> <!-- mouse -->
         </section>
         <section id="about" class="slider">
           <div class="inner">
@@ -52,7 +59,10 @@
           </div>
         </section>
       </div>
-    </div>
+    </div>  <!-- slider-area end -->
+    <div id="work">
+      <div class="wrap"></div>
+    </div>  <!-- works end -->
     <!--
     <div id="file">
       <div class="file-inner">
@@ -74,6 +84,7 @@
 
   <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/EzenScrollClass.js"></script>
   <script src="js/index.js"></script>
   <script src="js/media.js"></script>
   

@@ -1,5 +1,5 @@
 *{box-sizing: border-box; font-family: "DM Serif Text";}
-body{background-color: #F2F2F2;}
+body{background-color: #88bf5035;}
 section{width: 100%; height: fit-content;}
 
 
@@ -23,12 +23,23 @@ $HelveticaNeueThin: "HelveticaNeueThin", sans-serif;
 $HelveticaNeueItalic: "HelveticaNeueItalic", sans-serif;
 $HelveticaNeueRoman: "HelveticaNeueRoman", sans-serif;
 
+/* 고정값(color) */
+$color1: #f2f2f2;
+$color2: #eaf2ce;
+$color3: #dff2b6;
+$color4: #88bf50;
+$color5: #76a646;
+$color6: #255929;
+$color7: #1b401d;
+$color8: #0c260e;
+$color9: #0d0d0d;
 
 
 header{
   position: fixed; bottom: 0; left: 0;  z-index: 999;
   width: 100%; height: fit-content;
   margin: 0 auto;
+  display: none;
   .dock{
     position: absolute; bottom: 20px; left: 50%;
     display: flex; justify-content: center;
@@ -38,7 +49,7 @@ header{
     .dock-container{
       width: auto; height: 100%; padding: 3px;
       display: flex; justify-content: center; align-items: center;
-      background: rgba(83, 83, 83, 0.25);
+      background: rgba(156, 184, 85, 28%);
       backdrop-filter: blur(13px);
       -webkit-backdrop-filter: blur(13px);
       border: 1px solid rgba(255, 255, 255, 0.18);
@@ -53,7 +64,7 @@ header{
       display: flex; justify-content: center; align-items: center;
       height: 10px; padding: 10px 15px;
       background: rgba(255, 255, 255, 0.5); border-radius: 5px;
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(0, 0, 0, 0.9);
       visibility: hidden;}
     .name::after {content: "";
       position: absolute; bottom: -9.6px;
@@ -77,6 +88,7 @@ header{
     } // @for (:hover 했을 때, 이름표 뜨게 하는)
   } // .dock
 } // header
+header.scrolled{display: block;}
 
 /* main */
 #slider-area{width: 100%; height: 100vh; position: relative; overflow: hidden;
@@ -87,15 +99,57 @@ header{
 
 #hello{
   display: flex; justify-content: center; align-items: center;
-  .inner{width: 80%; height: 100%; color: #fff;}
-  h1{width: 100%; line-height: 1.2em;
-    font-size: 6rem; letter-spacing: 3px;}
-  h1 span{font-size: 4rem !important;}
+  position: relative; color: $color9;
+  .front{position: absolute; top: 7.5%; left: 0; z-index: 1;
+    display: flex; justify-content: center; align-items: center;
+    width: 100%; height: 100vh;
+    img{width: 26%; height: 36%; margin-top: 64px;}
+  }
+  .back{position: absolute; top: 7.5%; left: 0; z-index: -1;
+    display: flex; justify-content: center; align-items: center;
+    width: 100%; height: 100vh;
+    img{width: 26%; height: 44%;}
+  }
+  .text{position: absolute; top: 8%; left: 10%; z-index: 0;
+    width: 80%; height: 100%;
+    display: flex; justify-content: flex-start; align-items: center;
+    flex-direction: column;
+    font-family: $Dm-Serif-Text; font-style: italic; font-size: 6rem;
+    letter-spacing: 3px;}
+  p{display: block; width: 100%; text-align: center; }
+  h1{width: 100%; text-align: center; font-size: 14rem !important;}
+
+  @keyframes mouse-anime{
+    0%{height: 0; top: 0;}
+    25%{height: 100%; top: 0;}
+    50%{height: 100%; top: 0;}
+    75%{height: 0; top: 100%;}
+    100%{height: 0; top: 100%;}
+  }
+  .mouse{position: absolute; bottom: 0; z-index: 10;
+    width: 100%; height: 80px;
+    display: flex; justify-content: flex-start; align-items: center;
+    flex-direction: column;
+    p{font-size: 11px; margin-bottom: 10px; color: $color8;}
+    i{display: block; position: relative;
+    width: 1px; height: 60px; background-color: #00000033;}
+    i::after{content: "";
+    display: block;
+    width: 1px; height: 60px; background-color: $color8;
+    position: absolute; top: 0; left: 0;
+    animation: mouse-anime 2.5s ease infinite forwards;}
+  } // .mouse
 } // #hello
 
 #about{
   .inner{
     width: 100%; height: 100vh !important;
     display: flex; justify-content: center; align-items: center;
-    background-color: aqua;}
+    background-color: $color6;}
+}
+
+#work{
+  width: 100%; height: fit-content;
+  display: flex; justify-content: center; align-items: center;
+  .wrap{width: 100%; height: 2000px;}
 }
