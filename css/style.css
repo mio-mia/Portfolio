@@ -21,6 +21,7 @@ section {
 }
 
 /* 고정값 */
+/* 고정값(font) */
 /* 고정값(color) */
 header {
   position: fixed;
@@ -291,13 +292,125 @@ header.scrolled {
   animation: mouse-anime 2.5s ease infinite forwards;
 }
 
+#about {
+  background: #dff2b6;
+}
 #about .inner {
   width: 100%;
   height: 100vh !important;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #255929;
+  background: rgba(37, 89, 41, 0.85);
+}
+#about .wrap {
+  width: 80%;
+  height: 65%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+}
+#about .img {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#about .img img {
+  width: 100%;
+  height: auto;
+}
+#about ul {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-direction: row;
+}
+#about li {
+  width: 50%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  font-family: "Almarai", sans-serif !important;
+  border: 1px solid #000;
+}
+#about li .ko {
+  font-family: "Pretendard GOV", sans-serif !important;
+}
+#about li span {
+  font-weight: 600;
+}
+#about li.name {
+  justify-content: space-evenly;
+  padding-left: 20px;
+  color: #cbd3bc;
+}
+#about li.name h2 {
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+#about li.name h3 {
+  font-size: 36px;
+  margin: 8px 0 16px;
+  font-family: "Pretendard GOV", sans-serif !important;
+  letter-spacing: 8px;
+  color: #fbfff4 !important;
+}
+#about li.name .num-01 p {
+  font-size: 14px;
+  font-weight: 600;
+}
+#about li.name .num-02 p {
+  line-height: 1.7;
+}
+#about li.name .num-02 b {
+  margin: 0 6px;
+  font-weight: 600;
+}
+#about li.name .num-02 i.number {
+  letter-spacing: 0.8px;
+  color: #fbfff4 !important;
+}
+#about li.career {
+  justify-content: center;
+  padding-left: 44px;
+  color: #fbfff4;
+  position: relative;
+}
+#about li.career div {
+  width: 20px;
+  height: 70%;
+  position: absolute;
+  top: 15%;
+  left: 10px;
+  background: url(../img/line.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+#about li.career p {
+  margin-bottom: 18px;
+  position: relative;
+}
+#about li.career p:nth-child(4) {
+  margin-bottom: 0;
+}
+#about li.career p::before {
+  content: "●";
+  position: absolute;
+  top: 4px;
+  left: -28px;
+  font-size: 8px;
+  color: #fbfff4;
+}
+#about li.career i {
+  margin-left: 8px;
+}
+#about .skill {
+  border: 1px solid #000;
 }
 
 #work {

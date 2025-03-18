@@ -60,7 +60,7 @@ const main_swiper = new Swiper("#slider-area",{
      translate: [0, "0%", -400],
    },
    next: {
-     translate: [0, "100%", 100],
+     translate: [0, "100%", 200],
    },
   },
 });

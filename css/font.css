@@ -1,4 +1,11 @@
 
+/* KoddiUDOnGothic */
+@font-face {
+  font-family: 'KoddiUDOnGothic';
+  src: url(../font/KoddiUDOnGothic-Regular.woff) format('woff');
+}
+
+
 /* Acumin Pro */
 @font-face {
   font-family: 'Acumin Pro Bold';
